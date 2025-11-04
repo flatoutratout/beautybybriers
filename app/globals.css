@@ -2,10 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles */
 html, body {
-  @apply bg-ivory text-ink scroll-smooth;
+  @apply text-ink scroll-smooth;
   position: relative;
   min-height: 100%;
+  height: 100%;
+  background-color: #fffafc;
+  color: #222;
+}
+
+/* 🌸 Floral background */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url('/bbb_background.png') center center / cover no-repeat fixed;
+  opacity: 0.8; /* Adjust this for more or less visibility */
+}
+
+/* Soft fade overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.97) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 /* Container and layout */
@@ -19,32 +48,11 @@ html, body {
 .btn:hover { animation: shimmer 2.5s linear infinite; }
 .section { @apply py-16 md:py-24; }
 
-/* 🌸 Main floral background */
-body {
-  background: #fffafc url('/bbb_background.png') no-repeat center center fixed;
-  background-size: cover;
-  z-index: 0;
-}
-
-/* Soft fade overlay for text readability */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(255, 255, 255, 0.95) 60%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-/* Ensure content appears above the background */
-main, header, footer, .header-wrap {
+/* Ensure all content stays above background layers */
+main, header, footer, .header-wrap, section {
   position: relative;
   z-index: 1;
+  background: transparent !important;
 }
 
 /* Header styling */
