@@ -23,6 +23,7 @@ html, body {
 body {
   background: #fffafc url('/bbb_background.png') no-repeat center center fixed;
   background-size: cover;
+  z-index: 0;
 }
 
 /* Soft fade overlay for text readability */
@@ -31,7 +32,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0; /* lower than main content */
+  z-index: 0;
   background: radial-gradient(
     circle at center,
     rgba(255, 255, 255, 0.85) 0%,
@@ -40,7 +41,7 @@ body::before {
   );
 }
 
-/* Ensure page content sits above the overlays */
+/* Ensure content appears above the background */
 main, header, footer, .header-wrap {
   position: relative;
   z-index: 1;
