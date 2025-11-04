@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <filter id="soft4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>
+    <pattern id="floral4" width="200" height="200" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <g opacity="0.06">
+        <path d="M30 80c28-42 72-42 100 0-15 10-15 30-30 30s-15-20-30-30z" fill="#F6D98B"/>
+        <circle cx="80" cy="90" r="8" fill="#d7b966"/>
+        <ellipse cx="150" cy="40" rx="14" ry="7" fill="#F6D98B"/>
+        <ellipse cx="40" cy="150" rx="10" ry="5" fill="#F6D98B"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="1200" height="1200" fill="#FFFDF8"/>
+  <rect width="1200" height="1200" fill="url(#floral4)"/>
+  <g transform="translate(460,380)" opacity="0.12">
+    <path d="M40 80c28-42 72-42 100 0-15 10-15 30-30 30s-15-20-30-30z" fill="#F6D98B" filter="url(#soft4)"/>
+    <circle cx="90" cy="95" r="10" fill="#d7b966" filter="url(#soft4)"/>
+    <path d="M90 60c0 14 10 22 10 34-8-3-12-10-15-17-3 7-7 14-15 17 0-12 10-20 10-34h10z" fill="#f2e6b8" filter="url(#soft4)"/>
+  </g>
+  <text x="600" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="96" fill="#d7b966" opacity="0.28">Beauty by Briers</text>
+</svg>

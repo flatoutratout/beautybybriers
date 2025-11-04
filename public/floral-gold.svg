@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs><pattern id="p2" width="220" height="220" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+    <g opacity="0.12">
+      <path d="M30 50c20-30 50-30 70 0-12 8-12 22-24 22s-12-14-24-22z" fill="#F6D98B"/>
+      <circle cx="65" cy="60" r="6" fill="#d7b966"/>
+      <path d="M65 32c0 8 6 14 6 20-5-2-8-6-10-10-2 4-5 8-10 10 0-6 6-12 6-20h8z" fill="#f2e6b8"/>
+    </g></pattern></defs>
+  <rect width="1400" height="900" fill="url(#p2)"/>
+</svg>
