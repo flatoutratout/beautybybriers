@@ -2,60 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* ===== Base layout ===== */
 html, body {
   @apply text-ink scroll-smooth;
   position: relative;
   min-height: 100%;
   height: 100%;
-  background-color: #fffafc;
   color: #222;
+
+  /* 🌸 Force background visible */
+  background-color: #fffafc !important;
+  background-image: url('/bbb_background.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
 }
 
-/* 🌸 Floral background */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background: url('/bbb_background.png') center center / cover no-repeat fixed;
-  opacity: 0.8; /* Adjust this for more or less visibility */
+/* ===== Containers and cards ===== */
+.container { 
+  @apply max-w-6xl mx-auto px-4; 
+}
+.card { 
+  @apply bg-white/85 backdrop-blur rounded-2xl shadow-soft border border-white/50; 
 }
 
-/* Soft fade overlay for readability */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.97) 70%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-/* Container and layout */
-.container { @apply max-w-6xl mx-auto px-4; }
-.card { @apply bg-white/85 backdrop-blur rounded-2xl shadow-soft border border-white/50; }
+/* ===== Buttons ===== */
 .btn {
   @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-medium transition transform hover:-translate-y-0.5 active:translate-y-0;
   background: linear-gradient(90deg, #E9E3FF, #F6D98B, #E9E3FF);
   background-size: 200% 100%;
 }
 .btn:hover { animation: shimmer 2.5s linear infinite; }
-.section { @apply py-16 md:py-24; }
 
-/* Ensure all content stays above background layers */
+/* ===== Sections ===== */
+.section { 
+  @apply py-16 md:py-24; 
+}
+
+/* ===== Ensure content is above the background ===== */
 main, header, footer, .header-wrap, section {
   position: relative;
   z-index: 1;
   background: transparent !important;
 }
 
-/* Header styling */
+/* ===== Header styling ===== */
 .header-wrap {
   @apply sticky top-0 z-40 backdrop-blur border-b border-white/50;
   background: rgba(255, 253, 248, 0.65);
