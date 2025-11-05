@@ -25,7 +25,15 @@ export default function Header() {
       <div className="container flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-3">
           <div className="transition duration-300" style={{transform: scrolled ? 'scale(0.9)' : 'scale(1)', opacity: scrolled ? 0.95 : 1}}>
-            <Image src="/logo.png" alt="Beauty by Briers" width={scrolled ? 160 : 220} height={scrolled ? 40 : 56} priority />
+            <Image
+  src="/logo.png"
+  alt="Beauty by Briers logo"
+  width={180}
+  height={80}
+  priority
+  className="object-contain"
+/>
+
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-1">
